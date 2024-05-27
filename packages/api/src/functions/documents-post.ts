@@ -69,7 +69,7 @@ export async function postDocuments(request: HttpRequest, context: InvocationCon
       context.log('No Azure Blob Storage connection string set, skipping upload.');
     }
 
-    return ok({ message: 'PDF file uploaded successfully.' });
+    return ok({ message: `PDF file ${filename} uploaded successfully.` });
   } catch (_error: unknown) {
     const error = _error as Error;
     context.error(`Error when processing document-post request: ${error.message}`);
